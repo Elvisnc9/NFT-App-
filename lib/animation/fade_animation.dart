@@ -2,6 +2,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 class FadeAnimation extends StatelessWidget {
   const FadeAnimation({super.key, 
@@ -43,6 +45,50 @@ final Curve curve;
         child: child,);
       },
     
+    );
+  }
+}
+
+
+class ScrollAnimate extends StatefulWidget {
+  final Widget child;
+  final Duration duration;
+  final double slideOffset;
+  final Duration delay;
+
+  const ScrollAnimate({
+    super.key,
+    required this.child,
+    this.duration = const Duration(milliseconds: 700),
+    this.slideOffset = 0.2,
+    this.delay = Duration.zero,
+  });
+
+  @override
+  State<ScrollAnimate> createState() => _ScrollAnimateState();
+}
+
+class _ScrollAnimateState extends State<ScrollAnimate> {
+  bool _isVisible = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return VisibilityDetector(
+      key: Key(widget.key.toString() ?? UniqueKey().toString()),
+      onVisibilityChanged: (info) {
+        if (info.visibleFraction > 0.1 && !_isVisible) {
+          setState(() => _isVisible = true);
+        }
+      },
+      child: AnimatedSwitcher(
+        duration: widget.duration,
+        child: _isVisible
+            ? widget.child
+                .animate()
+                .fadeIn(duration: widget.duration, delay: widget.delay, curve: Curves.easeOut)
+                .slideY(begin: widget.slideOffset, duration: widget.duration, curve: Curves.easeOut)
+            : SizedBox.shrink(),
+      ),
     );
   }
 }

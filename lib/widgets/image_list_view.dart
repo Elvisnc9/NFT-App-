@@ -2,7 +2,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:nft_app/screen/nftscreen.dart';
 
 class ImageListView extends StatefulWidget {
   const ImageListView({super.key, required this.startIndex, required this.duration});
@@ -51,6 +50,7 @@ class _ImageListViewState extends State<ImageListView> {
       child: SizedBox(
         height: 115,
         child: ListView.builder(
+          
           controller: _scrollController ,
           itemCount: 10,
           scrollDirection: Axis.horizontal ,
@@ -69,22 +69,11 @@ class ImageTile extends StatelessWidget {
 final String image;
   @override
   Widget build(BuildContext context) {
-    return  GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context, 
-          MaterialPageRoute(
-            builder: (context) => NftDetailScreen(image: image),
-          ),
-        );
-      },
-          
-      child: Hero(
-        tag: image, 
-      child:Image.asset(
-        image,
-        height: 130,
-      ) ),
-    );
+    return  Hero(
+      tag: image, 
+    child:Image.asset(
+      image,
+      height: 130,
+    ) );
   }
 }
