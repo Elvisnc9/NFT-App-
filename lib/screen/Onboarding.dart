@@ -35,27 +35,24 @@ class OnBoardingScreen extends StatelessWidget {
                       end: Alignment.bottomCenter,
                       colors: [
                         Colors.black.withOpacity(0.4),
+                        Colors.black.withOpacity(0.5),
                         Colors.black.withOpacity(0.6),
-                        Colors.black.withOpacity(0.8),
-                        Colors.black.withOpacity(0.9),
+                        Colors.black.withOpacity(0.4),
                       ],
                     ).createShader(rect);
                   },
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        SizedBox(height: 2.h,),
-                        ImageListView(startIndex: 1, duration: 13),
-                        SizedBox(height: 2.h,),
-                        ImageListView(startIndex: 11, duration: 25,),
-                        SizedBox(height: 2.h,),
-                        ImageListView(startIndex: 21, duration: 12,),
-                        SizedBox(height: 2.h,),
-                         ImageListView(startIndex: 31, duration: 30,),
-                          
-                      ],
-                    ),
-                    
+                  child: Column(
+                    children: [
+                      SizedBox(height: 2.h,),
+                      ImageListView(startIndex: 1, duration: 11),
+                      SizedBox(height: 2.h,),
+                      ImageListView(startIndex: 11, duration: 20,),
+                      SizedBox(height: 2.h,),
+                      ImageListView(startIndex: 21, duration: 8,),
+                      SizedBox(height: 2.h,),
+                       ImageListView(startIndex: 31, duration: 25,),
+                        
+                    ],
                   ),
                 )
               ),

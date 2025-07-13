@@ -27,119 +27,133 @@ class _HomeScreenState extends State<HomeScreen> {
         curve: Curves.easeOut,
       ),
 
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 4.w),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SafeArea(
-                child: Text(
-                      'Explore',
-                      style: TextStyle(
-                        fontSize: 28,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                    .animate()
-                    .fadeIn(duration: 800.ms, curve: Curves.easeOut)
-                    .slideX(
-                      begin: -0.3,
-                      duration: 800.ms,
-                      curve: Curves.easeOut,
+      body: Container(
+         decoration: BoxDecoration(
+            image: DecorationImage(
+              opacity: 0.5,
+              image: AssetImage('assets/images/Bg.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 4.w),
+          child: CustomScrollView(
+            slivers: [ SliverToBoxAdapter(
+              child: Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 2.w, ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SafeArea(
+                      child: Text(
+                            'Explore',
+                            style: TextStyle(
+                              fontSize: 28,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                          .animate()
+                          .fadeIn(duration: 800.ms, curve: Curves.easeOut)
+                          .slideX(
+                            begin: -0.3,
+                            duration: 800.ms,
+                            curve: Curves.easeOut,
+                          ),
                     ),
+                
+                    SizedBox(height: 2.h),
+                
+                    Tab()
+                        .animate()
+                        .fadeIn(
+                          duration: 700.ms,
+                          delay: 200.ms,
+                          curve: Curves.easeOut,
+                        )
+                        .slideX(
+                          begin: 0.2,
+                          duration: 0.8.seconds,
+                          curve: Curves.easeInQuad,
+                        ),
+                
+                    SizedBox(height: 4.h),
+                
+                    SectionHeaders(title: 'Live Auction')
+                        .animate()
+                        .fadeIn(duration: 400.ms, delay: 40.ms, curve: Curves.easeOut)
+                        .slideX(
+                          begin: -0.15,
+                          duration: 0.8.seconds,
+                          curve: Curves.easeOut,
+                        ),
+                
+                    SizedBox(height: 2.h),
+                
+                    NFTcards()
+                        .animate()
+                        .fadeIn(
+                          duration: 0.6.seconds,
+                          delay: 100.ms,
+                          curve: Curves.easeOut,
+                        )
+                        .slideX(
+                          begin: 0.4,
+                          duration: 0.9.seconds,
+                          delay: 0.1.seconds,
+                          curve: Curves.easeOut,
+                        ),
+                
+                    SizedBox(height: 3.h),
+                
+                    SectionHeaders(title: 'Top Collections')
+                        .animate()
+                        .fadeIn(
+                          duration: 0.9.seconds,
+                          delay: 40.ms,
+                          curve: Curves.easeOut,
+                        )
+                        .slideX(
+                          begin: -0.15,
+                          duration: 800.ms,
+                          curve: Curves.easeOut,
+                        ),
+                
+                    Trending()
+                        .animate()
+                        .fadeIn(
+                          duration: 0.3.seconds,
+                          delay: 90.ms,
+                          curve: Curves.easeOut,
+                        )
+                        .slideY(
+                          begin: 0.25,
+                          duration: 0.8.seconds,
+                          delay: 0.6.seconds,
+                          curve: Curves.easeOut,
+                        ),
+                
+                    SizedBox(height: 2.h),
+                
+                    SectionTitles(title: 'Top Artists'),
+                
+                    Artist(),
+                    SizedBox(height: 3.h),
+                
+                    SectionTitles(title: 'Top Collectors Buy Today'),
+                
+                    TodayChoice(),
+                
+                    SizedBox(height: 3.h),
+                
+                    SectionHeaders(title: 'Trending in Gaming'),
+                
+                    Gaming(),
+                    SizedBox(height: 5.h),
+                  ],
+                ),
               ),
-
-              SizedBox(height: 2.h),
-
-              Tab()
-                  .animate()
-                  .fadeIn(
-                    duration: 700.ms,
-                    delay: 200.ms,
-                    curve: Curves.easeOut,
-                  )
-                  .slideX(
-                    begin: 0.2,
-                    duration: 0.8.seconds,
-                    curve: Curves.easeInQuad,
-                  ),
-
-              SizedBox(height: 4.h),
-
-              SectionHeaders(title: 'Live Auction')
-                  .animate()
-                  .fadeIn(duration: 400.ms, delay: 40.ms, curve: Curves.easeOut)
-                  .slideX(
-                    begin: -0.15,
-                    duration: 0.8.seconds,
-                    curve: Curves.easeOut,
-                  ),
-
-              SizedBox(height: 2.h),
-
-              NFTcards()
-                  .animate()
-                  .fadeIn(
-                    duration: 0.4.seconds,
-                    delay: 100.ms,
-                    curve: Curves.easeOut,
-                  )
-                  .slideX(
-                    begin: 0.4,
-                    duration: 1.2.seconds,
-                    delay: 0.3.seconds,
-                    curve: Curves.easeOut,
-                  ),
-
-              SizedBox(height: 3.h),
-
-              SectionHeaders(title: 'Top Collections')
-                  .animate()
-                  .fadeIn(
-                    duration: 0.9.seconds,
-                    delay: 40.ms,
-                    curve: Curves.easeOut,
-                  )
-                  .slideX(
-                    begin: -0.15,
-                    duration: 800.ms,
-                    curve: Curves.easeOut,
-                  ),
-
-              Trending()
-                  .animate()
-                  .fadeIn(
-                    duration: 0.3.seconds,
-                    delay: 90.ms,
-                    curve: Curves.easeOut,
-                  )
-                  .slideY(
-                    begin: 0.25,
-                    duration: 0.8.seconds,
-                    delay: 0.6.seconds,
-                    curve: Curves.easeOut,
-                  ),
-
-              SizedBox(height: 2.h),
-
-              SectionTitles(title: 'Top Artists'),
-
-              Artist(),
-              SizedBox(height: 3.h),
-
-              SectionTitles(title: 'Top Collectors Buy Today'),
-
-              TodayChoice(),
-
-              SizedBox(height: 3.h),
-
-              SectionHeaders(title: 'Trending in Gaming'),
-
-              Gaming(),
-              SizedBox(height: 5.h),
-            ],
+            ),]
           ),
         ),
       ),
@@ -431,15 +445,19 @@ class Tab extends StatelessWidget {
 class Trending extends StatelessWidget {
   Trending({super.key});
   final List<String> Nftimage = [
-    'assets/nfts/14.png',
+    'assets/nfts/21.png',
     'assets/images/bored-ape.jpg',
     'assets/nfts/22.png',
+    'assets/nfts/47.png',
+    'assets/nfts/40.png',
   ];
 
   final List<String> name = [
     'MORALES APE #1289 ',
     'KILLER APE #2838',
     'CITY APE #9888',
+    'SPACE APE #1923',
+    'WILD APE #1234',
   ];
 
   @override
@@ -454,7 +472,7 @@ class Trending extends StatelessWidget {
           itemCount: Nftimage.length,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(4.0),
               child: Container(
                 height: 25.h,
                 width: 50.w,

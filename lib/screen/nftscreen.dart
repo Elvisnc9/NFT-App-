@@ -97,6 +97,8 @@ class _NftDetailScreenState extends State<NftDetailScreen>
   }
 }
 
+
+
 class PlaceBidWidget extends StatelessWidget {
   const PlaceBidWidget({super.key});
 
@@ -107,6 +109,11 @@ class PlaceBidWidget extends StatelessWidget {
       height: 30.h,
       width: double.infinity,
       decoration: BoxDecoration(
+         image: DecorationImage(
+              opacity: 0.4,
+              image: AssetImage('assets/images/Bg.jpg'),
+              fit: BoxFit.cover,
+            ),
         color: Color.fromARGB(255, 53, 93, 86),
         borderRadius: BorderRadius.circular(35),
       ),
@@ -234,9 +241,15 @@ class ContentWidget extends StatelessWidget {
     return Container(
       height: 100.h,
       width: double.infinity,
+       
       decoration: BoxDecoration(
         color: Color.fromARGB(255, 41, 70, 65),
         borderRadius: BorderRadius.circular(30),
+         image: DecorationImage(
+              opacity: 0.3,
+              image: AssetImage('assets/images/Bg.jpg'),
+              fit: BoxFit.cover,
+            ),
       ),
       padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 0.5.h),
 
@@ -470,9 +483,9 @@ class _BidingListState extends State<BidingList> {
   }
 
   void _startAutoScroll()async{
-    const scrollSpeed = 30;
+    const scrollSpeed = 10;
   while(mounted){
-    await Future.delayed(const Duration(milliseconds: 16));
+    await Future.delayed(const Duration(milliseconds: 10));
     if (_scrollController.hasClients) {
       final max = _scrollController.position.maxScrollExtent;
       final offset = _scrollController.offset + (scrollSpeed /60);
@@ -511,7 +524,7 @@ class _BidingListState extends State<BidingList> {
             children: [
               // For spacing where avatar was
               Text('Price', style: headerStyle),
-              SizedBox(width: 20.w), // Spacer for
+              SizedBox(width: 25.w), // Spacer for
               Text('\$ Price', style: headerStyle),
               SizedBox(width: 5.w),
               Text('Time', style: headerStyle),
@@ -604,7 +617,11 @@ class WalletSelectionSheet extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(top: 25, left: 16, right: 16),
       height: MediaQuery.of(context).size.height * 0.65,
-      decoration: BoxDecoration(
+      decoration: BoxDecoration( image: DecorationImage(
+              opacity: 0.5,
+              image: AssetImage('assets/images/Bg.jpg'),
+              fit: BoxFit.cover,
+            ),
         color: Color.fromARGB(255, 41, 70, 65),
         borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
       ),
