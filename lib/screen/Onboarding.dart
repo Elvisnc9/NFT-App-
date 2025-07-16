@@ -18,11 +18,11 @@ class OnBoardingScreen extends StatelessWidget {
            height: double.infinity,
           width: double.infinity,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              opacity: 0.5,
-              image: AssetImage('assets/images/Bg.jpg'),
-              fit: BoxFit.cover,
-            ),
+            // image: DecorationImage(
+            //   opacity: 0.5,
+            //   image: AssetImage('assets/images/Bg.jpg'),
+            //   fit: BoxFit.cover,
+            // ),
           ),
           child: Stack(
             children: [

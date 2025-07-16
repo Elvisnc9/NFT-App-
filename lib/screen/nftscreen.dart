@@ -16,19 +16,16 @@ class NftDetailScreen extends StatefulWidget {
 class _NftDetailScreenState extends State<NftDetailScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 4, vsync: this);
   }
-
   @override
   void dispose() {
     _tabController.dispose();
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

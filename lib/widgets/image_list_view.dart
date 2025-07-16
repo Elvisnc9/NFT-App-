@@ -1,6 +1,5 @@
  import 'dart:async';
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class ImageListView extends StatefulWidget {
@@ -11,27 +10,21 @@ class ImageListView extends StatefulWidget {
   @override
   State<ImageListView> createState() => _ImageListViewState();
 }
-
 class _ImageListViewState extends State<ImageListView> {
   late ScrollController _scrollController;
-
 @override
   void initState() {
-    
     super.initState();
     _scrollController = ScrollController();
     _scrollController.addListener((){ 
       if(_scrollController.position.atEdge) {
         _autoScroll();
       }
- 
     });
-
       WidgetsBinding.instance.addPostFrameCallback((_){
       _autoScroll();
       }); 
   }
-
   _autoScroll(){
     final _currentscrollPosition = _scrollController.offset;
 
