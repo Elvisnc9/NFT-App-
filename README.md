@@ -10,7 +10,9 @@ Welcome to the **NFT App**, a platform designed to  trade, or showcase NFTs. Thi
 ## Demo
 Watch a quick demo of the NFT App in action:
 
+
 [Insert Video Here](assets/images/NFTAPP.mp4)
+
 
 
 ## Features
