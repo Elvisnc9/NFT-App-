@@ -1,22 +1,22 @@
 # NFT APPLICATION UI
 
-Welcome to the **NFT App**, a platform designed to [briefly describe the app’s purpose, e.g., create, trade, or showcase NFTs]. This application provides a user-friendly interface for interacting with NFTs on [specify blockchain, e.g., Ethereum,  or others if known].
+Welcome to the **NFT App**, a platform designed to  trade, or showcase NFTs. This application provides a user-friendly interface for interacting with NFTs on specify blockchain. With Fun and Interactive User interface , from the Onboarding to the the MarketPlace .
 
 ## Table of Contents
-- [Features](#features)
 - [Demo](#demo)
+- [Features](#features)
 - [Technologies](#Flutter)
-
-## Features
-- **Marketplace**: [Describe if users can buy/sell/trade NFTs].
-- **Wallet Integration**: [Mention supported wallets, e.g., MetaMask, if applicable].
-- **User-Friendly Interface**: [Highlight UI/UX features].
-- .
 
 ## Demo
 Watch a quick demo of the NFT App in action:
 
-[Insert Video Here](assets/images/NFT%20APP.mp4)
+![Insert Video Here](assets/images/NFT%20APP.mp4)
+
+
+## Features
+- **Marketplace**: The homePage of the application.
+- **Wallet Integration**: A UI interface for wallet and network syncing functionality.
+- **User-Friendly Interface**: With light and cool animations , this app tends to provide and give a user a maximum experience.
 
 
 
